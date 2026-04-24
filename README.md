@@ -126,6 +126,3 @@ Enter the URL you want to scrape: https://example.com
 
 Joseph Okeke
 
-##  Contact
-
-* LinkedIn: (add your link)
