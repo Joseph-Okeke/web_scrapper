@@ -6,9 +6,9 @@ import time
 def spider(url):
     # Set up headless Chrome
     options = Options()
-    options.add_argument("--headless")          # Run without opening browser window
-    options.add_argument("--disable-gpu")       # Recommended for headless
-    options.add_argument("--no-sandbox")        # Linux safety
+    options.add_argument("--headless")          
+    options.add_argument("--disable-gpu")       
+    options.add_argument("--no-sandbox")        
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                          "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -26,7 +26,7 @@ def spider(url):
     html = driver.page_source
     soup = BeautifulSoup(html, "html.parser")
 
-    # ---- Extract links ----
+    # Extract links 
     print("\n All Links (cleaned):")
     links = soup.find_all("a", href=True)
     for i, a_tag in enumerate(links, 1):
@@ -38,7 +38,7 @@ def spider(url):
 
         print(f"{i}. {text} → {href}")
 
-    # ---- Extract images ----
+    # Extract images
     print("\n All Images (cleaned):")
     images = soup.find_all("img", src=True)
     for j, img_tag in enumerate(images, 1):
